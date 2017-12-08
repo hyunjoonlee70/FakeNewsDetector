@@ -1,0 +1,76 @@
+_____     _          _   _
+|  ___|_ _| | _____  | \ | | _____      _____
+| |_ / _` | |/ / _ \ |  \| |/ _ \ \ /\ / / __|
+|  _| (_| |   <  __/ | |\  |  __/\ V  V /\__ \
+|_|  \__,_|_|\_\___| |_| \_|\___| \_/\_/ |___/
+
+____       _            _
+|  _ \  ___| |_ ___  ___| |_ ___  _ __
+| | | |/ _ \ __/ _ \/ __| __/ _ \| '__|
+| |_| |  __/ ||  __/ (__| || (_) | |
+|____/ \___|\__\___|\___|\__\___/|_|
+
+********************************************************************************
+
+Date: 12/03/17
+Authors: Bu Geun  Cho, Hyunjoon Lee, Xinyue Qian
+Project Name: FakeNews Detecting Chrome Extension, v 1.0
+
+********************************************************************************
+
+How to Install:
+    1) Download all necessary python libraries and JDK, JRE.
+    2) In Google Chrome, under "More", hover over "More Tools", and click Extensions.
+       Check "Developer mode" and then "load unpacked extension." Navigate to the
+       correct file directory and install.
+    3) In terminal, run "FLASK_APP=run.py flask run". You might need to download
+       Flask.
+
+********************************************************************************
+
+How to Run:
+    1) Open a page that you would like to check.
+    2) Click the extension logo.
+    3) If the program believes that this might be fake news, you will be notified.
+
+********************************************************************************
+
+Brief Explanation of How the Program Works:
+    1) Given a url link, extract the text files and store it.
+    2) Using a data set of fake news, calculate cosine similarity and make a
+       decision.
+    3) The user still has the choice of continuing even after the notification.
+
+********************************************************************************
+
+Known Bugs/Issues & Topics to Improve on:
+    1) After testing our code, we have concluded that the accuracy is approximately
+       60%.
+    2) If the user chooses to stop reading, the program does not close the page
+       for the user automatically.
+    3) May encounter a broken pipe error. This is caused by a browser tab being
+       shut down prematurely in consideration of other aspects of the program.
+
+********************************************************************************
+
+Citations:
+    1) On actual implementation and python libraries for Cosine Similarity, we
+       consulted
+       https://sites.temple.edu/tudsc/2017/03/30/measuring-similarity-between-texts-in-python/
+    2) We used a picture of Zuckerberg found online at
+       https://www.feelguide.com/2014/07/27/american-king-wall-street-already-knows-that-mark-zuckerberg-will-become-the-worlds-richest-person/
+    3) We found the dataset from:
+       https://www.kaggle.com/mrisdal/fake-news
+       
+********************************************************************************
+
+Testing:
+    One can use the following links to check this program.
+    1) From National Geographics:
+       https://news.nationalgeographic.com/2017/12/cave-discovery-montreal-st-leonard-ice-age-spd/
+    2) From Conservative Tribune
+       https://conservativetribune.com/wapo-reporter-trump-russia/
+    3) From New York Times:
+       https://www.nytimes.com/2017/12/01/books/review/peter-baker-obama-the-call-of-history.html
+
+    The results should be: 1) Not Fake, 2) Fake, 3) Not Fake
